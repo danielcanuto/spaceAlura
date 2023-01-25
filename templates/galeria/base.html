@@ -16,19 +16,19 @@
 <body>
     <div class="pagina-inicial">
         <!-- logo e campo de pesquisa topo da pagina -->
-        {% include 'galeria/partials/_header.html' %}
+        {% include 'partials/_header.html' %}
         <main class="principal">
             <!-- Navegação paginas header lado esquerdo -->
-            {% include 'galeria/partials/_nav.html' %}
+            {% include 'partials/_nav.html' %}
             <section class="conteudo">
                 <!--menu de tags  -->
-                {% include 'galeria/partials/_menu.html' %}
+                {% include 'partials/_menu.html' %}
                 <!-- bloco de conteudo da  -->
                 {% block content %}{% endblock %}
             </section>
         </main>
     </div>
-    {% include 'galeria/partials/_footer.html' %}
+    {% include 'partials/_footer.html' %}
 </body>
 
 </html>
