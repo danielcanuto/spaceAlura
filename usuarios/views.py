@@ -64,7 +64,10 @@ def cadastro(request):
     return render(request, 'usuarios/cadastro.html', {"form": form})
 
 def logout(request):
-
-    auth.logout(request)
-    messages.success(request, "Logout efetuado com sucesso!")
-    return redirect('index')
+    if not request.user.is_authenticated:
+        messages.error(request, "⚠ Faça o longin para poder sair! ⚠")
+        return redirect('login')
+    else:
+        auth.logout(request)
+        messages.success(request, "Logout efetuado com sucesso!")
+        return redirect('login')
